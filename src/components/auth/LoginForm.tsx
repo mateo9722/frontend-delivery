@@ -3,6 +3,7 @@ import { useNavigate } from "react-router"
 import { Label } from "../ui/label"
 import { Input } from "../ui/input"
 import { Button } from "../ui/button"
+import { Link } from "react-router-dom"
 
 export const LoginForm = () => {
     const navigate = useNavigate()
@@ -68,6 +69,17 @@ export const LoginForm = () => {
             <Button type="submit" variant="outline" className="w-full">
                 Iniciar sesión
             </Button>
+            <div className="text-center text-sm">
+  <span className="text-muted-foreground">
+    ¿No tienes cuenta?{" "}
+  </span>
+                <Link
+                    to="/register"
+                    className="font-medium text-primary hover:underline"
+                >
+                    Regístrate
+                </Link>
+            </div>
         </form>
     )
 }
