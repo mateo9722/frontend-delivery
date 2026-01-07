@@ -37,8 +37,7 @@ export const LoginForm = () => {
             user.email === formData.email &&
             user.password === formData.password
         ) {
-            console.log("Login exitoso")
-            navigate("/") // luego será home
+            navigate("/pharmacies")
         } else {
             alert("Credenciales incorrectas")
         }
@@ -69,10 +68,11 @@ export const LoginForm = () => {
             <Button type="submit" variant="outline" className="w-full">
                 Iniciar sesión
             </Button>
+
             <div className="text-center text-sm">
-  <span className="text-muted-foreground">
-    ¿No tienes cuenta?{" "}
-  </span>
+                <span className="text-muted-foreground">
+                    ¿No tienes cuenta?{" "}
+                </span>
                 <Link
                     to="/register"
                     className="font-medium text-primary hover:underline"

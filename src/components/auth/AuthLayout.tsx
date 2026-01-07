@@ -5,7 +5,7 @@ interface RegisterLayoutProps {
     children: ReactNode
 }
 
-export const RegisterLayout = ({ children }: RegisterLayoutProps) => {
+export const AuthLayout = ({ children }: RegisterLayoutProps) => {
     return (
         <div className="min-h-screen w-full flex items-center justify-center bg-background px-4">
             <Card className="w-full max-w-md shadow-md">

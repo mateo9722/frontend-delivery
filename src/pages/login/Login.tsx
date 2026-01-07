@@ -1,13 +1,13 @@
-import {RegisterLayout} from "../../components/auth/RegisterLayout";
-import {LoginHeader} from "../../components/auth/LoginHeader";
-import {LoginForm} from "../../components/auth/LoginForm";
+import {AuthLayout} from "@/components/auth/AuthLayout";
+import {LoginHeader} from "@/components/auth/LoginHeader";
+import {LoginForm} from "@/components/auth/LoginForm";
 
 
 export const LoginPage = () => {
     return (
-        <RegisterLayout>
+        <AuthLayout>
             <LoginHeader />
             <LoginForm />
-        </RegisterLayout>
+        </AuthLayout>
     )
 }

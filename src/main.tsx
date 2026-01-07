@@ -7,20 +7,24 @@ import {
 } from "react-router-dom"
 
 import "./index.css"
-import App from "./App"
+
 import { LoginPage } from "./pages/login/Login"
 import { RegisterPage } from "./pages/register/Register"
+import { PharmaciesPage } from "./pages/pharmacies/PharmaciesPage"
+import {AppLayout} from "@/components/layout/AppLayout";
+import {PharmacyDetailPage} from "@/pages/pharmacies/PharmacyDetailPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App />,
         children: [
             // 👉 redirección inicial
             {
                 index: true,
                 element: <Navigate to="/login" replace />,
             },
+
+            // 👉 Auth (SIN sidebar)
             {
                 path: "login",
                 element: <LoginPage />,
@@ -29,9 +33,20 @@ const router = createBrowserRouter([
                 path: "register",
                 element: <RegisterPage />,
             },
+
+            // 👉 App (CON sidebar)
             {
-                path: "shop",
-                element: <h1>Shop Page</h1>,
+                element: <AppLayout />,
+                children: [
+                    {
+                        path: "pharmacies",
+                        element: <PharmaciesPage />,
+                    },
+                    {
+                        path:"pharmacies/:id",
+                        element: <PharmacyDetailPage/>
+                    }
+                ],
             },
         ],
     },
@@ -40,5 +55,5 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
         <RouterProvider router={router} />
-    </StrictMode>,
+    </StrictMode>
 )
